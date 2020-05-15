@@ -1,0 +1,15 @@
+.header {
+  @extend .band;
+  grid-area: header;
+  background-color: #000;
+  color: #fff;
+  height: 72px;
+  .container {
+    @extend .container-horizontal;
+    height: 100%;
+  }
+  h1 {
+    @extend .h5;
+    margin: 0;
+  }
+}

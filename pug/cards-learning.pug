@@ -1,0 +1,51 @@
+- const cards = ['card1', 'card2', 'card3']
+
+    .wrapper
+      each card in cards
+        div(class=card)
+          .header
+          .icon
+            i.fa.fa-book
+          .body
+            .title
+              h1 Integer sed sapien interdum
+              .date-due
+                i.far.fa-calendar-check
+                span
+                  | Due 
+                  em 5/20/20
+            .description
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et orci gravida mi placerat consectetur sagittis non ligula. Proin sit amet augue a neque sagittis gravida ac ut metus.
+            .meta
+              .shared
+                i.fa.fa-globe
+                span Public
+              .credits
+                i.fa.fa-award
+                span
+                  em 2
+                  |  CL
+              .duration
+                i.far.fa-clock
+                span
+                  em 2
+                  |  hrs 
+                  em 30
+                  |  mins
+          .session
+            .session-display
+              .date
+                i.fa.fa-calendar
+                span.calendarmonth September 2020
+                span.calendarday 31
+                span.weekday Wednesday
+              .time
+                i.far.fa-clock
+                span.start-time 9:00 am
+                span.timezone America/New York
+          .status
+            .enrollment
+              i.far.fa-dot-circle
+              span
+                | Enrolled

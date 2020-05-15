@@ -1,0 +1,31 @@
+.banner-message-container {
+  @extend .shadow-lg;
+  @extend .box-group-vertical;
+}
+
+// layout has 3 columns: .icon, .content, .cta
+.banner-message {
+  @extend .layout-3-part;
+  @extend .card-row-base;
+  @extend .shadow-lg;
+  margin-bottom: $scale0;
+  background-color: $indigo-shade1;
+  color: #fff;
+
+  .content {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &.info {
+    background-color: $status-color-info;
+  }
+  &.success {
+    background-color: $status-color-success;
+  }
+  &.warning {
+    background-color: $status-color-warning;
+  }
+  &.danger {
+    background-color: $status-color-danger;
+  }
+}

@@ -1,0 +1,32 @@
+.tabs {
+  display: block;
+  margin: $scale6 0;
+  text-align: center;
+  border-bottom: 2px solid $blue;
+  ul {
+    @extend .u-list-plain-horizontal;
+    li {
+      a {
+        @include transition-all();
+        @extend .control-label;
+        display: block;
+        margin: 0;
+        color: $button-primary-color;
+        padding: $base-value-half $base-value;
+        background-color: $grey0;
+      }
+      a:hover {
+        background-color: $grey2;
+        text-decoration: none;
+      }
+      &.active {
+        a {
+          background-color: $button-primary-color;
+          // border: 2px solid $blue;
+          // border-bottom: 2px solid $button-primary-color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@mixin label-variant($faceColor, $textColor: false) {
+  @if $textColor == false {
+    $textColor: choose-contrast-color($faceColor);
+  }
+
+  background: $faceColor;
+  color: $textColor;
+  i[class^='fa'] {
+    color: $textColor;
+  }
+}
+
+.label {
+  @extend .small;
+  display: inline-block;
+  padding: $base-value-quarter $base-value;
+  border-radius: $radius-full;
+  background: $teal-tint3;
+  color: $teal-shade3;
+  white-space: nowrap;
+  margin: 0;
+  i[class^='fa'] {
+    color: $teal-shade2;
+  }
+  i[class^='fa'].left {
+    margin-right: $base-value-half;
+  }
+  i[class^='fa'].right {
+    margin-left: $base-value-half;
+  }
+  em {
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &.info {
+    @include label-variant($status-color-info, white);
+    i[class^='fa'] {
+      color: $blue-tint3;
+    }
+  }
+
+  &.success {
+    @include label-variant($status-color-success, white);
+    i[class^='fa'] {
+      color: $green-tint3;
+    }
+  }
+
+  &.warning {
+    @include label-variant($status-color-warning);
+    i[class^='fa'] {
+      color: $yelloworange-shade2;
+    }
+  }
+
+  &.danger {
+    @include label-variant($status-color-danger, white);
+    i[class^='fa'] {
+      color: $red-tint3;
+    }
+  }
+}

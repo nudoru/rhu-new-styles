@@ -1,0 +1,104 @@
+section
+  h1 Some components
+  div
+    h5 Cards
+    .card-group-horizontal
+      each val in [1, 2, 3,4,5,6]
+        include card-basic
+  div 
+    h5 Buttons
+    button 
+      i.fa.fa-box.left
+      | Default
+      i.fa.fa-box.right
+    button.disabled Disabled
+    button.secondary Secondary
+    button.success Success
+    button.warning Warning
+    button.danger Danger
+    button.outline Default
+    button.secondary.outline Secondary
+    button.success.outline Success
+    button.warning.outline Warning
+    button.danger.outline Danger
+  hr
+  div
+    h5 Labels
+    .label 
+      i.fa.fa-tag.left
+      | Label
+    .label.info 
+      i.fa.fa-box.left
+      | Information
+    .label.success 
+      i.fa.fa-box.left
+      | Success
+    .label.warning 
+      i.fa.fa-box.left
+      | Warning
+    .label.danger 
+      i.fa.fa-box.left
+      | Danger
+    hr
+    div
+    h5 Tabs
+      .tabs
+        ul
+          li.active
+            a(href='#') One
+          li
+            a(href='#') Two
+          li
+            a(href='#') Three
+    hr
+    div
+      h5 Layout - grid square
+      .grid-square
+        each val in [1, 2, 3, 4]
+          .cell
+            span
+              i.fa.fa-5x.fa-air-freshener
+    hr
+    div
+      h5 Banners
+      .banner-message-container
+        .banner-message
+          .icon
+            i.fa.fa-cog
+          .content
+            h1 Some Title
+            p Some Message
+          .cta
+            button.white.outline Dismiss
+        .banner-message.info
+          .icon
+            i.fa.fa-cog
+          .content
+            h1 Some Title
+            p Some Message
+          .cta
+            button.white.outline Dismiss
+        .banner-message.success
+          .icon
+            i.fa.fa-cog
+          .content
+            h1 Some Title
+            p Some Message
+          .cta
+            button.white.outline Dismiss
+        .banner-message.warning
+          .icon
+            i.fa.fa-cog
+          .content
+            h1 Some Title
+            p Some Message
+          .cta
+            button.white.outline Dismiss
+        .banner-message.danger
+          .icon
+            i.fa.fa-cog
+          .content
+            h1 Some Title
+            p Some Message
+          .cta
+            button.white.outline Dismiss

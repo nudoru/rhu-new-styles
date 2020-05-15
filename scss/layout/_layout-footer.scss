@@ -1,0 +1,16 @@
+.footer {
+  @extend .band;
+  grid-area: footer;
+  background-color: $grey8;
+  color: #fff;
+  padding: $band-container-padding 0;
+  .container {
+    @extend .container-horizontal;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  p {
+    @extend .small;
+    margin: 0;
+  }
+}

@@ -1,0 +1,50 @@
+@import 'scss/vendor/webgradients';
+
+@import 'scss/vars';
+@import 'scss/functions';
+@import 'scss/mixins';
+@import 'scss/utils';
+@import 'scss/typography';
+@import 'scss/layout/layout-util';
+@import 'scss/layout/layout-grid-square';
+@import 'scss/forms';
+
+@import 'scss/components/component-banner';
+@import 'scss/components/component-button';
+@import 'scss/components/component-card';
+@import 'scss/components/component-checkbox';
+@import 'scss/components/component-icon';
+@import 'scss/components/component-label';
+@import 'scss/components/component-switch';
+@import 'scss/components/component-tabs';
+@import 'scss/components/component-tag';
+
+@import 'scss/layout/layout-app';
+@import 'scss/layout/layout-header';
+@import 'scss/layout/layout-hero';
+@import 'scss/layout/layout-content';
+@import 'scss/layout/layout-footer';
+
+html {
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  min-height: 100vh;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: $scale0;
+  font-family: $font-family-base;
+  background-color: $body-background-color;
+}

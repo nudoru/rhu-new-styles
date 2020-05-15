@@ -1,0 +1,51 @@
+h1 Compact
+form.pure-form
+  fieldset
+    legend A compact inline form
+    input(type='email' placeholder='Email')
+    input(type='password' placeholder='Password')
+    label(for='default-remember')
+      input#default-remember(type='checkbox')
+      | Remember me
+    button.pure-button.pure-button-primary(type='submit') Sign in
+
+h1 Stacked
+form.pure-form.pure-form-stacked
+  fieldset
+    legend A Stacked Form
+    label(for='stacked-email') Email
+    input#stacked-email(type='email' placeholder='Email')
+    span.pure-form-message This is a required field.
+    label(for='stacked-password') Password
+    input#stacked-password(type='password' placeholder='Password')
+    label(for='stacked-state') State
+    select#stacked-state
+      option AL
+      option CA
+      option IL
+    label.pure-checkbox(for='stacked-remember')
+      input#stacked-remember(type='checkbox')
+      |  Remember me
+    button(type='submit') Sign in
+h1 Aligned Form
+form.pure-form.pure-form-aligned
+  fieldset
+    .pure-control-group
+      label(for='aligned-name') Username
+      input#aligned-name(type='text' placeholder='Username')
+      span.pure-form-message-inline This is a required field.
+    .pure-control-group
+      label(for='aligned-password') Password
+      input#aligned-password(type='password' placeholder='Password')
+    .pure-control-group
+      label(for='aligned-email') Email Address
+      input#aligned-email(type='email' placeholder='Email Address')
+    .pure-control-group
+      label(for='aligned-foo') Supercalifragilistic Label
+      input#aligned-foo(type='text' placeholder='Enter something here...')
+    .pure-controls
+      label.pure-checkbox(for='aligned-cb')
+        input#aligned-cb(type='checkbox')
+        |  I&apos;ve read the terms and conditions
+      button(type='submit') Submit
+
