@@ -30,7 +30,7 @@
   }
   em {
     font-style: normal;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
 
   &.info {
@@ -58,6 +58,35 @@
     @include label-variant($status-color-danger, white);
     i[class^='fa'] {
       color: $red-tint3;
+    }
+  }
+}
+
+.label-stats-horizontal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+  border-top: 1px solid $teal-tint2;
+  background: $teal-tint3;
+  .label {
+    text-align: center;
+    font-size: 0.6rem;
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    border-right: 1px solid $teal-tint2;
+    color: $teal-shade2;
+    &:last-of-type {
+      border-right: none;
+    }
+    i[class^='fa'] {
+      display: block;
+      padding-bottom: 0.5rem;
+      margin: 0;
+      color: $teal-shade3;
+      font-size: 1rem;
     }
   }
 }
