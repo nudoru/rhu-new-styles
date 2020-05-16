@@ -1,3 +1,30 @@
+$iconSizes: (
+  'xs': 24px,
+  'sm': 35px,
+  'md': 50px,
+  'lg': 75px,
+  'xl': 100px,
+);
+
+$iconFontSizes: (
+  'xs': 0.7rem,
+  'sm': 1rem,
+  'md': 1.2rem,
+  'lg': 2rem,
+  'xl': 3rem,
+);
+
+@each $size, $value in $iconSizes {
+  @each $status, $color in $statusColor {
+    .icon-#{$status}-#{$size} {
+      @include icon-container($value, map-get($iconFontSizes, $size));
+      border-radius: 50%;
+      background-color: $color;
+      color: #fff;
+    }
+  }
+}
+
 .icon-card-header-square-xl {
   @extend .shadow-sm;
   position: relative;
@@ -19,7 +46,7 @@
   }
 }
 
-.icon-card-header-round-base {
+.icon-card-header-base {
   @extend .shadow-sm;
   background: linear-gradient(-20deg, $teal-tint3, #fff);
   border-radius: 50%;
@@ -32,17 +59,24 @@
   }
 }
 
-.icon-card-header-round-sm {
-  @extend .icon-card-header-round-base;
-  @include icon-container(48px, 1.2rem);
+@each $size, $value in $iconSizes {
+  .icon-card-header-#{$size} {
+    @extend .icon-card-header-base;
+    @include icon-container($value, map-get($iconFontSizes, $size));
+  }
 }
 
-.icon-card-header-round-lg {
-  @extend .icon-card-header-round-base;
-  @include icon-container(75px, 2rem);
-}
+// .icon-card-header-sm {
+//   @extend .icon-card-header-base;
+//   @include icon-container(48px, 1.2rem);
+// }
 
-.icon-card-header-round-xl {
-  @extend .icon-card-header-round-base;
-  @include icon-container(100px, 3rem);
-}
+// .icon-card-header-lg {
+//   @extend .icon-card-header-base;
+//   @include icon-container(75px, 2rem);
+// }
+
+// .icon-card-header-xl {
+//   @extend .icon-card-header-base;
+//   @include icon-container(100px, 3rem);
+// }

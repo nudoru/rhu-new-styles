@@ -16,16 +16,9 @@
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
   }
 
-  &.info {
-    background-color: $status-color-info;
-  }
-  &.success {
-    background-color: $status-color-success;
-  }
-  &.warning {
-    background-color: $status-color-warning;
-  }
-  &.danger {
-    background-color: $status-color-danger;
+  @each $status, $color in $statusColor {
+    &.#{$status} {
+      background-color: $color;
+    }
   }
 }

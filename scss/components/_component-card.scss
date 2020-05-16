@@ -12,7 +12,7 @@
   margin-bottom: $scale0;
   border-radius: $radius-base;
   overflow: hidden;
-  & > * {
+  & > div {
     margin: 0 !important;
     border-radius: 0;
     box-shadow: none;
@@ -111,7 +111,7 @@
     border-radius: $card-border-radius 0 0 $card-border-radius;
   }
   .icon {
-    @extend .icon-card-header-round-sm;
+    @extend .icon-card-header-md;
     grid-area: header;
     align-self: center;
     justify-self: center;
@@ -179,7 +179,7 @@
   }
 
   .icon {
-    @extend .icon-card-header-round-xl;
+    @extend .icon-card-header-xl;
     grid-area: header;
     align-self: end;
     z-index: 2;

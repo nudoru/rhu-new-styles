@@ -99,6 +99,13 @@ $status-color-success: $green-shade1;
 $status-color-warning: $yelloworange;
 $status-color-danger: $red-shade1;
 
+$statusColor: (
+  'info': $blue,
+  'success': $green-shade1,
+  'warning': $yelloworange,
+  'danger': $red-shade1,
+);
+
 // https://www.modularscale.com/?1,1170,12&em&1.35
 $modularscale-base: 1em 1170em 12em;
 $modularscale-ratio: 1.35;
