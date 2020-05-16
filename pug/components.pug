@@ -1,6 +1,14 @@
 section
   h1 Some components
   div
+    h5 Icons
+    .grid-square
+        each val in ['icon-card-header-round-sm','icon-card-header-round-lg','icon-card-header-round-xl','icon-card-header-square-xl']
+          .cell
+            span
+              div(class=val)
+                i.fa.fa-air-freshener
+  div
     h5 Cards as Row
     .card-group-vertical
       each val in [1, 2, 3,4,5,6]

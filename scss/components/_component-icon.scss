@@ -19,16 +19,6 @@
   }
 }
 
-@mixin icon-container($size, $iconsize) {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: $size;
-  height: $size;
-  font-size: $iconsize;
-}
-
 .icon-card-header-round-base {
   @extend .shadow-sm;
   background: linear-gradient(-20deg, $teal-tint3, #fff);
