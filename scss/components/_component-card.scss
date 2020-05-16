@@ -85,7 +85,68 @@
 
 .card-group-vertical {
   @extend .card-grid-x1;
+  & > .card {
+    @extend .card-row;
+  }
   margin-bottom: $scale3;
+}
+
+.card-row {
+  width: 100%;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    'header content status'
+    'header content meta';
+  justify-items: center;
+  height: auto;
+  margin-bottom: 0px;
+  &.stacked {
+    margin-bottom: 1rem;
+  }
+  .header {
+    height: 100%;
+    width: 100px;
+    background-color: $purple;
+    border-radius: $card-border-radius 0 0 $card-border-radius;
+  }
+  .icon {
+    @extend .icon-card-header-round-sm;
+    grid-area: header;
+    align-self: center;
+    justify-self: center;
+    z-index: 2;
+  }
+  .content {
+    padding: 1rem 2rem;
+    margin: 0;
+    border-radius: 0;
+    .title {
+      text-align: left;
+    }
+    .description {
+      @include line-clamp(6);
+      margin: 1rem 0;
+    }
+  }
+  .meta {
+    border-radius: 0 0 $card-border-radius 0;
+    border-top: none;
+  }
+  .status {
+    grid-area: status;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    text-align: center;
+    .label {
+      border-radius: 0 $card-border-radius 0 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
 }
 
 // Because of the stacked effect, the card can't have border radius / overflow hidden

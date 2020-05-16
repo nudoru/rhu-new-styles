@@ -20,6 +20,17 @@
   overflow: hidden;
 }
 
+// Box for a font-awesome style icon div > i
+@mixin icon-container($size, $iconsize) {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+  font-size: $iconsize;
+}
+
 @mixin stacked-cards($borderradius: $card-border-radius, $color: #fff) {
   transform-style: preserve-3d;
   &::before {
