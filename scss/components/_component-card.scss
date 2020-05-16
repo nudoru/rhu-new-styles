@@ -88,21 +88,8 @@
   margin-bottom: $scale3;
 }
 
-.card-title {
-  @extend .h4;
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: $purple-shade3;
-  letter-spacing: -0.04rem;
-}
-
-.card-description {
-  @extend .small;
-  margin: 0;
-  color: $grey6;
-}
-
+// Because of the stacked effect, the card can't have border radius / overflow hidden
+// so each area needs to
 .card {
   @extend .shadow-m;
   display: grid;
@@ -117,47 +104,47 @@
   height: $card-height;
   border-radius: $card-border-radius;
   background-color: #fff;
+
   &.stacked {
     @include stacked-cards($card-border-radius, $teal-tint3);
   }
 
   .header {
     grid-area: header;
-    position: relative;
     height: 140px;
-    background-color: $purple;
     width: 100%;
+    background-color: $purple;
     border-radius: $card-border-radius $card-border-radius 0 0;
   }
 
   .icon {
-    grid-area: 1 / 1 / 2 / 2;
+    @extend .icon-card-header-round-xl;
+    grid-area: header;
     align-self: end;
     z-index: 2;
-    @extend .icon-card-header-round-xl;
   }
 
   .content {
     grid-area: content;
+    position: relative;
+    width: 100%;
+    z-index: 1;
     padding: 2rem 2rem 1rem 2rem;
     margin-top: -$card-border-radius;
     background-color: white;
     border-radius: $card-border-radius;
-    width: 100%;
-    z-index: 1;
-    position: relative;
     .title {
       text-align: center;
-      width: 100%;
       h1 {
-        @extend .card-title;
+        @extend .control-title;
+        color: $purple-shade3;
       }
     }
     .description {
       @include line-clamp(6);
       margin: 1rem 0;
       p {
-        @extend .card-description;
+        @extend .control-message;
       }
     }
   }
