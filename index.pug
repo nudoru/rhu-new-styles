@@ -18,16 +18,13 @@ html(lang='en')
 
   body
     main.app
-      section.header
-        include pug/header
-      //section.hero
-        include pug/hero  
-      section.content
+      include pug/header
+      //- include pug/hero  
+      section.app-content
         .band.shaded
           .container
             include pug/components
         .container
           include pug/typography
           include pug/forms
-      section.footer
-        include pug/footer
+      include pug/footer

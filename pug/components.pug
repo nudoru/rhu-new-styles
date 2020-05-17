@@ -1,5 +1,14 @@
 section
-  h1 Some components
+  div
+    h5 Cards as Row
+    .card-group-vertical
+      each val in [1, 2, 3,4,5,6]
+        include card-basic
+
+    h5 Cards as Grid
+    .card-group-horizontal
+      each val in [1, 2, 3,4,5,6]
+        include card-basic
   div
     h5 Table
     include table
@@ -17,16 +26,6 @@ section
             span
               div(class=val)
                 i.fa.fa-air-freshener
-  div
-    h5 Cards as Row
-    .card-group-vertical
-      each val in [1, 2, 3,4,5,6]
-        include card-basic
-
-    h5 Cards as Grid
-    .card-group-horizontal
-      each val in [1, 2, 3,4,5,6]
-        include card-basic
   div 
     h5 Buttons
     button 

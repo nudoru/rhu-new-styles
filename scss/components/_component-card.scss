@@ -85,13 +85,13 @@
 
 .card-group-vertical {
   @extend .card-grid-x1;
-  & > .card {
-    @extend .card-row;
+  & > .card-fancy {
+    @extend .card-fancy-row;
   }
   margin-bottom: $scale3;
 }
 
-.card-row {
+.card-fancy-row {
   width: 100%;
   grid-template-rows: 50px 1fr;
   grid-template-columns: auto minmax(0, 1fr) auto;
@@ -151,7 +151,7 @@
 
 // Because of the stacked effect, the card can't have border radius / overflow hidden
 // so each area needs to
-.card {
+.card-fancy {
   @extend .shadow-m;
   display: grid;
   grid-template-columns: 1fr;
