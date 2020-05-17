@@ -99,10 +99,20 @@ $status-color-success: $green-shade1;
 $status-color-warning: $yelloworange;
 $status-color-danger: $red-shade1;
 
+$primary-color: $blue;
+$primary-color-dark: $blue-shade2;
+$primary-color-light: $blue-tint3;
+$secondary-color: $purple;
+$secondary-color-dark: $purple-shade2;
+$secondary-color-light: $purple-tint3;
+$neutral-color: $grey3;
+$neutral-color-dark: $grey6;
+$neutral-color-light: $grey1;
+
 // Background colors
 $statusColor: (
-  'primary': $blue,
-  'secondary': $purple,
+  'primary': $primary-color,
+  'secondary': $secondary-color,
   'white': #fff,
   'info': $blue,
   'success': $green-shade1,
