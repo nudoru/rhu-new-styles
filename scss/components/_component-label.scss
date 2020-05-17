@@ -15,12 +15,12 @@
   display: inline-block;
   padding: $base-value-quarter $base-value;
   border-radius: $radius-full;
-  background: $teal-tint3;
-  color: $teal-shade3;
+  background: $label-color-background;
+  color: $label-color-text;
   white-space: nowrap;
   margin: 0;
   i[class^='fa'] {
-    color: $teal-shade2;
+    color: $label-color-icon;
   }
   i[class^='fa'].left {
     margin-right: $base-value-half;
@@ -33,31 +33,12 @@
     font-weight: $font-weight-bold;
   }
 
-  &.info {
-    @include label-variant($status-color-info, white);
-    i[class^='fa'] {
-      color: $blue-tint3;
-    }
-  }
-
-  &.success {
-    @include label-variant($status-color-success, white);
-    i[class^='fa'] {
-      color: $green-tint3;
-    }
-  }
-
-  &.warning {
-    @include label-variant($status-color-warning);
-    i[class^='fa'] {
-      color: $yelloworange-shade2;
-    }
-  }
-
-  &.danger {
-    @include label-variant($status-color-danger, white);
-    i[class^='fa'] {
-      color: $red-tint3;
+  @each $status, $color in $statusColor {
+    &.#{$status} {
+      @include label-variant($color, map-get($statusTextColor, $status));
+      i[class^='fa'] {
+        color: map-get($statusTextColor, $status);
+      }
     }
   }
 }
@@ -68,8 +49,8 @@
   width: 100%;
   justify-content: center;
   align-items: stretch;
-  border-top: 1px solid $teal-tint2;
-  background: $teal-tint3;
+  border-top: 1px solid $label-color-border;
+  background: $label-color-background;
   .label {
     text-align: center;
     font-size: 0.6rem;
@@ -77,7 +58,7 @@
     padding: 0.5rem 1rem;
     border-radius: 0;
     border-right: 1px solid $teal-tint2;
-    color: $teal-shade2;
+    color: $label-color-icon;
     &:last-of-type {
       border-right: none;
     }
@@ -85,7 +66,7 @@
       display: block;
       padding-bottom: 0.5rem;
       margin: 0;
-      color: $teal-shade3;
+      color: $label-color-text;
       font-size: 1rem;
     }
   }

@@ -53,3 +53,13 @@
   border: 1px solid $form-color-disabled-text;
   box-shadow: inherit;
 }
+
+@function control-gradient-darker($color) {
+  //adj-darker($color, $pct: 10%, $sat: 10%, $hue: 10)
+  @return linear-gradient(-20deg, $color, adj-darker($color));
+}
+
+@function control-gradient-lighter($color) {
+  //adj-darker($color, $pct: 10%, $sat: 10%, $hue: 10)
+  @return linear-gradient(-20deg, $color, adj-lighter($color, 10%, 5%));
+}

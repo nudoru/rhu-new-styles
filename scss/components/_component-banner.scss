@@ -19,6 +19,7 @@
   @each $status, $color in $statusColor {
     &.#{$status} {
       background-color: $color;
+      color: map-get($statusTextColor, $status);
     }
   }
 }

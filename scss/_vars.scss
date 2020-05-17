@@ -99,11 +99,26 @@ $status-color-success: $green-shade1;
 $status-color-warning: $yelloworange;
 $status-color-danger: $red-shade1;
 
+// Background colors
 $statusColor: (
+  'primary': $blue,
+  'secondary': $purple,
+  'white': #fff,
   'info': $blue,
   'success': $green-shade1,
   'warning': $yelloworange,
   'danger': $red-shade1,
+);
+
+// Font colors on top of status
+$statusTextColor: (
+  'primary': #fff,
+  'secondary': #fff,
+  'white': $grey8,
+  'info': #fff,
+  'success': #fff,
+  'warning': $orange-shade3,
+  'danger': #fff,
 );
 
 // https://www.modularscale.com/?1,1170,12&em&1.35
@@ -189,6 +204,11 @@ $from-color-error-text: $red-shade2;
 $button-primary-color: $link-color;
 $button-primary-color-over: $link-hover-color;
 $button-secondary-color: $purple;
+
+$label-color-text: $teal-shade3;
+$label-color-background: $teal-tint3;
+$label-color-border: $teal-tint2;
+$label-color-icon: $teal-shade2;
 
 // STACKING ------------------------------------------------------------------------------------------------
 

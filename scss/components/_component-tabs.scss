@@ -9,6 +9,7 @@
       a {
         @include transition-all();
         @extend .control-label;
+        @extend .u-unselectable;
         display: block;
         margin: 0;
         color: $button-primary-color;
@@ -22,8 +23,6 @@
       &.active {
         a {
           background-color: $button-primary-color;
-          // border: 2px solid $blue;
-          // border-bottom: 2px solid $button-primary-color;
           color: #fff;
         }
       }
