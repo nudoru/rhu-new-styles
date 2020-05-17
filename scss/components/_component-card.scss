@@ -40,14 +40,6 @@
   }
 }
 
-.card-base {
-  @extend .box;
-  @include transition-all(0.15s);
-  border-radius: $card-border-radius;
-  border: 1px solid transparent;
-  z-index: 0;
-}
-
 .card-interactive {
   &:hover {
     // TODO optimize shadow animation
@@ -55,7 +47,7 @@
     @include transition-all();
     border: none;
     z-index: 1;
-    transform: translateY(-3px);
+    // transform: translateY(-3px);
   }
   &:focus {
     outline: 1px dashed $blue;
@@ -67,18 +59,11 @@
   }
 }
 
-.card-row-base {
-  @extend .card-base;
-  //padding: $scale0;
-  //margin-bottom: $base-value-quarter;
-}
-
 .card-group-horizontal {
   @extend .card-grid-x3;
   margin-bottom: $scale3;
   & > * {
     margin: 0 !important;
-    // max-width: $card-width-max;
     width: 100% !important;
   }
 }
@@ -95,34 +80,48 @@
 // so each area needs to
 .card {
   @extend .shadow-sm;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-areas:
     'header'
-    'content';
+    'content'
+    'footer';
   justify-items: center;
-  width: $card-width;
-  height: $card-height;
-  border-radius: $card-border-radius;
+  // width: $card-width;
+  // height: $card-height;
+  border-radius: $radius-base;
   background-color: #fff;
-
-  &.stacked {
-    @include stacked-cards($card-border-radius, $teal-tint3);
-  }
+  overflow: hidden;
 
   .header {
     grid-area: header;
-    height: 140px;
+    position: relative;
+    height: 100px;
     width: 100%;
     background-color: $primary-color-light;
-    border-radius: $card-border-radius $card-border-radius 0 0;
+    overflow: hidden;
+    img {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    h1 {
+      @extend .h4;
+      margin: 0;
+      position: absolute;
+      bottom: 1rem;
+      left: 2rem;
+      color: #fff;
+    }
   }
 
   .icon {
-    @extend .icon-card-header-xl;
+    @extend .icon-card-header-lg;
+    position: relative;
     grid-area: header;
-    align-self: end;
+    align-self: center;
     z-index: 2;
   }
 
@@ -130,64 +129,30 @@
     grid-area: content;
     position: relative;
     width: 100%;
-    z-index: 1;
-    padding: 2rem 2rem 1rem 2rem;
-    margin-top: -$card-border-radius;
+    padding: 1rem 2rem;
     background-color: white;
-    border-radius: $card-border-radius;
     .title {
-      text-align: center;
       h1 {
-        @extend .control-title;
-        color: $purple-shade3;
+        // @extend .control-title;
+        @extend h4;
+        color: $purple-shade1;
       }
     }
     .description {
       @include line-clamp(6);
       margin: 1rem 0;
       p {
-        @extend .control-message;
+        color: $grey6;
+        // @extend .control-message;
       }
     }
   }
-}
 
-.card-row {
-  width: 100%;
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-template-areas:
-    'header content'
-    'header content';
-  justify-items: center;
-  height: auto;
-  margin-bottom: 0px;
-  &.stacked {
-    margin-bottom: 1rem;
-  }
-  .header {
-    height: 100%;
-    width: 100px;
-    background-color: $purple;
-    border-radius: $card-border-radius 0 0 $card-border-radius;
-  }
-  .icon {
-    @extend .icon-card-header-md;
-    grid-area: header;
+  .footer {
+    grid-area: footer;
     align-self: center;
-    justify-self: center;
-    z-index: 2;
-  }
-  .content {
+    width: 100%;
     padding: 1rem 2rem;
-    margin: 0;
-    border-radius: 0;
-    .title {
-      text-align: left;
-    }
-    .description {
-      @include line-clamp(6);
-      margin: 1rem 0;
-    }
+    background-color: $neutral-color-light;
   }
 }

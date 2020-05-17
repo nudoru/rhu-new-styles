@@ -6,8 +6,10 @@
 // layout has 3 columns: .icon, .content, .cta
 .banner-message {
   @extend .layout-3-part;
-  @extend .card-row-base;
   @extend .shadow-lg;
+  @extend .box;
+  border-radius: $card-border-radius;
+  border: 1px solid transparent;
   margin-bottom: $scale0;
   background-color: $indigo-shade1;
   color: #fff;

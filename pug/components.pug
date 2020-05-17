@@ -4,14 +4,17 @@ section
     .card-group-horizontal
       each val in [1, 2, 3]
         include card-basic
-    h5 Fancy Cards as Row
-    .card-group-vertical
-      each val in [1, 2, 3]
-        include card-fancy
+    hr
     h5 Fancy Cards as Grid
     .card-group-horizontal
       each val in [1, 2, 3]
         include card-fancy
+    hr
+    h5 Fancy Cards as Row
+    .card-group-vertical
+      each val in [1, 2, 3]
+        include card-fancy
+    
   div
     h5 Table
     include table
