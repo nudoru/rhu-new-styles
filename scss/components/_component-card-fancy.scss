@@ -1,106 +1,14 @@
-.box {
-  @extend .shadow-xs;
-  border-radius: $radius-base;
-  position: relative;
-  overflow: hidden;
-}
-
-.box-group-vertical {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: $scale0;
-  border-radius: $radius-base;
-  overflow: hidden;
-  & > div {
-    margin: 0 !important;
-    border-radius: 0;
-    box-shadow: none;
-    border-bottom: 1px solid rgba(black, 0.25);
-  }
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.box-group-horizontal {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: $scale0;
-  border-radius: $radius-base;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  & > * {
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-}
-
-.card-base {
-  @extend .box;
-  @include transition-all(0.15s);
-  border-radius: $card-border-radius;
-  border: 1px solid transparent;
-  z-index: 0;
-}
-
-.card-interactive {
-  &:hover {
-    // TODO optimize shadow animation
-    @extend .control-border-style-active;
-    @include transition-all();
-    border: none;
-    z-index: 1;
-    transform: translateY(-3px);
-  }
-  &:focus {
-    outline: 1px dashed $blue;
-  }
-  &.disabled {
-    &:hover {
-      @extend .control-border-style-disabled;
-    }
-  }
-}
-
-.card-row-base {
-  @extend .card-base;
-  //padding: $scale0;
-  //margin-bottom: $base-value-quarter;
-}
-
-.card-group-horizontal {
-  @extend .card-grid-x3;
-  margin-bottom: $scale3;
-  & > * {
-    margin: 0 !important;
-    // max-width: $card-width-max;
-    width: 100% !important;
-  }
-}
-
-.card-group-vertical {
-  @extend .card-grid-x1;
-  & > .card-fancy {
-    @extend .card-fancy-row;
-  }
-  margin-bottom: $scale3;
-}
-
 // Because of the stacked effect, the card can't have border radius / overflow hidden
 // so each area needs to
-.card {
-  @extend .shadow-sm;
+.card-fancy {
+  @extend .shadow-m;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-areas:
     'header'
-    'content';
+    'content'
+    'meta';
   justify-items: center;
   width: $card-width;
   height: $card-height;
@@ -115,7 +23,7 @@
     grid-area: header;
     height: 140px;
     width: 100%;
-    background-color: $primary-color-light;
+    background-color: $purple;
     border-radius: $card-border-radius $card-border-radius 0 0;
   }
 
@@ -150,15 +58,44 @@
       }
     }
   }
+
+  .meta {
+    @extend .label-stats-horizontal;
+    grid-area: meta;
+    border-radius: 0 0 $card-border-radius $card-border-radius;
+    overflow: hidden;
+  }
+
+  // .meta {
+  //   grid-area: meta;
+  //   display: flex;
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  //   align-items: center;
+  //   padding: 1rem;
+  //   .label {
+  //     margin-right: 0.25rem;
+  //     margin-bottom: 0.25rem;
+  //     &:last-of-type {
+  //       margin-right: 0;
+  //     }
+  //   }
+  // }
+
+  .status {
+    position: absolute;
+    top: $card-border-radius/2;
+    right: $card-border-radius/2;
+  }
 }
 
-.card-row {
+.card-fancy-row {
   width: 100%;
   grid-template-rows: 50px 1fr;
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas:
-    'header content'
-    'header content';
+    'header content status'
+    'header content meta';
   justify-items: center;
   height: auto;
   margin-bottom: 0px;
@@ -188,6 +125,24 @@
     .description {
       @include line-clamp(6);
       margin: 1rem 0;
+    }
+  }
+  .meta {
+    border-radius: 0 0 $card-border-radius 0;
+    border-top: none;
+  }
+  .status {
+    grid-area: status;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    text-align: center;
+    .label {
+      border-radius: 0 $card-border-radius 0 0;
+      width: 100%;
+      height: 100%;
+      display: block;
     }
   }
 }

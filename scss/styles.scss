@@ -1,5 +1,3 @@
-@import 'scss/vendor/webgradients';
-
 @import 'scss/vars';
 @import 'scss/functions';
 @import 'scss/mixins';
@@ -14,13 +12,14 @@
 @import 'scss/components/component-banner';
 @import 'scss/components/component-button';
 @import 'scss/components/component-card';
-@import 'scss/components/component-checkbox';
+@import 'scss/components/component-card-fancy';
 @import 'scss/components/component-icon';
 @import 'scss/components/component-label';
-@import 'scss/components/component-switch';
 @import 'scss/components/component-tabs';
 @import 'scss/components/component-tag';
-@import 'scss/components/_component-table.sass';
+@import 'scss/components/component-table';
+// needs to be updated @import 'scss/components/component-checkbox';
+// needs to be updated @import 'scss/components/component-switch';
 
 @import 'scss/layout/layout-app';
 @import 'scss/layout/layout-header';

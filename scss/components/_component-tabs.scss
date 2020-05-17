@@ -2,7 +2,7 @@
   display: block;
   margin: $scale6 0;
   text-align: center;
-  border-bottom: 2px solid $blue;
+  border-bottom: 2px solid $primary-color;
   ul {
     @extend .u-list-plain-horizontal;
     li {
@@ -12,8 +12,8 @@
         @extend .u-unselectable;
         display: block;
         margin: 0;
-        color: $button-primary-color;
-        padding: $base-value-half $base-value;
+        color: $primary-color-dark;
+        padding: $base-value $base-value * 2;
         background-color: $grey0;
       }
       a:hover {
@@ -22,7 +22,7 @@
       }
       &.active {
         a {
-          background-color: $button-primary-color;
+          background-color: $primary-color;
           color: #fff;
         }
       }
