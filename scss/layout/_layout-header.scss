@@ -4,6 +4,9 @@
   background-color: #000;
   color: #fff;
   height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: $zindex-header;
   .container {
     @extend .container-horizontal;
     height: 100%;
