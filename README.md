@@ -8,9 +8,6 @@ Run with `UV_THREADPOOL_SIZE=64 npm run dev`
 - card, icon - no outline, but white
 - card, header move light/dark from h1 to header
 - form aligned message shouldn't be full width
-- add small shadow to button
-- button styles: block, large, x-small
-- remove 'pure' prefix for forms
 - badge component
 - fix container 100% adding extra scroll bars
 - remove checkbox and switch?

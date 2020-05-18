@@ -48,6 +48,10 @@ section
     button.success.outline Success
     button.warning.outline Warning
     button.danger.outline Danger
+    hr
+    button.block Block button
+    hr
+    button.large Large
   hr
   div
     h5 Labels
@@ -70,6 +74,24 @@ section
     div
     h5 Tabs
       .tabs
+        ul
+          li.active
+            a(href='#') One
+          li
+            a(href='#') Two
+          li
+            a(href='#') Three
+      .tabs.align-start
+        ul
+          li.note Lorem ipsum dolor sit amet
+          li.active
+            a(href='#') One
+          li
+            a(href='#') Two
+          li
+            a(href='#') Three
+          li.note Lorem ipsum dolor sit amet
+      .tabs.align-end
         ul
           li.active
             a(href='#') One
