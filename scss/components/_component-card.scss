@@ -99,36 +99,41 @@
   .header {
     grid-area: header;
     position: relative;
-    height: 100px;
     width: 100%;
+    padding: 1rem 2rem;
     background-color: $primary-color-light;
     overflow: hidden;
-    img {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-    }
-    h1 {
-      @extend .h4;
-      margin: 0;
-      position: absolute;
-      bottom: 1rem;
-      left: 2rem;
-      color: #fff;
-      text-shadow: $shadow-text-dark;
-      &.dark {
+    &.dark {
+      h1,
+      .icon {
         color: $grey8;
         text-shadow: $shadow-text-light;
       }
     }
-  }
-
-  .icon {
-    @extend .icon-card-header-lg;
-    position: relative;
-    grid-area: header;
-    align-self: center;
-    z-index: 2;
+    img {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .icon {
+      position: relative;
+      z-index: 1;
+      font-size: 4rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-shadow: $shadow-text-dark;
+      text-align: center;
+    }
+    h1 {
+      @extend .h4;
+      margin: 0;
+      position: relative;
+      color: #fff;
+      text-shadow: $shadow-text-dark;
+    }
   }
 
   .content {
