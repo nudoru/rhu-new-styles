@@ -199,11 +199,13 @@ $font-weight-bold: 600;
 $font-size-normal: $scale0;
 $font-size-small: $scale-3;
 
+$control-border-light: 1px solid $neutral-color-light;
+$control-border-mid: 1px solid $neutral-color;
+$control-border-dark: 1px solid $neutral-color-dark;
+
 // FORMS ------------------------------------------------------------------------------------------------
 
-$form-color-border: $grey3;
 $form-color-inner-shadow: $grey2;
-$form-color-focus: $teal-tint1;
 $form-color-disabled-background: $grey1;
 $form-color-disabled-text: $grey3;
 $from-color-error-border: $red;
