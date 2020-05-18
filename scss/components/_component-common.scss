@@ -28,11 +28,20 @@
   letter-spacing: -0.04rem;
 }
 
-// Card body text
+// Card body text, form message
 .control-message {
   @extend .small;
   margin: 0;
   color: $grey6;
+}
+
+.control-note {
+  @extend .control-message;
+  display: inline-block;
+  background-color: $neutral-color-light;
+  color: $neutral-color-dark;
+  padding: $base-value-quarter $base-value;
+  border-radius: $radius-base;
 }
 
 .control-shadow-inner {

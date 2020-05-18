@@ -91,7 +91,8 @@
   justify-items: center;
   // width: $card-width;
   // height: $card-height;
-  border-radius: $radius-base;
+  border-radius: 0 0 $radius-base $radius-base;
+  border-top: 2px solid $primary-color;
   background-color: #fff;
   overflow: hidden;
 
@@ -114,6 +115,11 @@
       bottom: 1rem;
       left: 2rem;
       color: #fff;
+      text-shadow: $shadow-text-dark;
+      &.dark {
+        color: $grey8;
+        text-shadow: $shadow-text-light;
+      }
     }
   }
 
@@ -133,9 +139,8 @@
     background-color: white;
     .title {
       h1 {
-        // @extend .control-title;
-        @extend h4;
-        color: $purple-shade1;
+        @extend .control-title;
+        color: $primary-color-dark;
       }
     }
     .description {
@@ -144,6 +149,9 @@
       p {
         color: $grey6;
         // @extend .control-message;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
   }

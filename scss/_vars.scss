@@ -234,6 +234,12 @@ $card-height: 400px;
 $card-height-list: 200px;
 $card-radius: $radius-base;
 
+// TABLES ------------------------------------------------------------------------------------------------
+
+$table-cell-padding: $base-value;
+$table-color-row-zebra: rgba($neutral-color-dark, 0.07);
+$table-color-column-zebra: rgba(white, 0.3);
+
 // Class Props ------------------------------------------------------------------------------------------------
 
 // From Calendar
@@ -253,3 +259,8 @@ $class-color-inprogress-dark: $yelloworange-shade2;
 $class-color-completed: $green-shade2;
 $class-color-completed-light: $green-tint2;
 $class-color-completed-dark: $green-shade3;
+
+// Parts ------------------------------------------------------------------------------------------------
+
+$shadow-text-dark: 1px 1px 0 rgba(0, 0, 0, 0.25);
+$shadow-text-light: 1px 1px 0 rgba(255, 255, 255, 0.5);
