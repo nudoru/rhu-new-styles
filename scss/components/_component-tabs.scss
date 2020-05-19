@@ -1,6 +1,5 @@
 %element-tab {
   @extend .control-label;
-
   margin: 0;
   padding: $base-value $base-value * 2;
 }
@@ -9,12 +8,15 @@
   display: block;
   margin: $scale6 0;
   text-align: center;
-  border-bottom: 2px solid $primary-color;
+  border-bottom: $control-border-mid;
   &.align-start {
     text-align: left;
   }
   &.align-end {
     text-align: right;
+  }
+  &.border-top {
+    border-top: $control-border-mid;
   }
   ul {
     @extend .u-list-plain-horizontal;
@@ -23,9 +25,10 @@
         @include transition-all();
         @extend .u-unselectable;
         @extend %element-tab;
-        display: block;
+        display: inline-block;
         color: $primary-color-dark;
-        background-color: $grey0;
+        // background-color: $grey0;
+        border-bottom: 2px solid transparent;
       }
       a:hover {
         background-color: $grey2;
@@ -33,15 +36,24 @@
       }
       &.active {
         a {
-          background-color: $primary-color;
-          color: #fff;
+          background-color: #fff;
+          color: $primary-color;
+          border-bottom: 2px solid $primary-color;
         }
       }
       &.note {
         @extend %element-tab;
         color: $neutral-color-dark;
         text-transform: none;
-        font-weight: $font-weight-bold;
+      }
+      &.seperator {
+        &:not(:last-child):after {
+          @extend %element-tab;
+          padding-left: $base-value-quarter;
+          padding-right: $base-value-quarter;
+          color: $neutral-color;
+          content: '\\';
+        }
       }
     }
   }
