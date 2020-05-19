@@ -3,14 +3,11 @@
   grid-area: footer;
   background-color: $grey8;
   color: #fff;
-  padding: $band-container-padding 0;
-  .container {
-    @extend .container-horizontal;
-    justify-content: flex-end;
-    height: 100%;
-  }
-  p {
-    @extend .small;
-    margin: 0;
+  .container-horizontal {
+    p {
+      @extend .small;
+      color: $grey3;
+      margin: 0;
+    }
   }
 }

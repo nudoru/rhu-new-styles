@@ -19,12 +19,14 @@ html(lang='en')
   body
     main.app
       include pug/header
-      //include pug/hero  
+      include pug/hero  
       section.app-content
-        .band.shaded
+        .shaded
           .container
-            include pug/components
+            include pug/typography
         .container
-          include pug/typography
-          include pug/forms
+            include pug/components
+        .shaded
+          .container
+            include pug/forms
       include pug/footer

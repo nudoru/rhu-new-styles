@@ -9,25 +9,40 @@
   min-height: 100vh;
 }
 
+%app-container {
+  position: relative;
+  width: 100%;
+  max-width: $container-width-max;
+  margin: 0 auto;
+  height: 100%;
+}
+
 .band {
   display: flex;
   flex-direction: column;
-  &.shaded {
+  .shaded {
     background-color: $grey1;
-  }
-  .container {
-    width: 100%;
-    max-width: $container-width-max;
-    padding: 0 $band-container-padding;
-    margin: 0 auto;
     height: 100%;
   }
+  .container {
+    @extend %app-container;
+    padding: 0 $band-container-padding;
+  }
   .container-horizontal {
-    // used on header, footer
+    @extend %app-container;
+    padding: $band-container-padding;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    .start {
+      flex: 1;
+      text-align: left;
+    }
+    .end {
+      flex: 1;
+      text-align: right;
+    }
   }
   .container-full {
     width: 100%;

@@ -1,18 +1,19 @@
 .app-header {
   @extend .band;
+  @extend .shadow-m;
   grid-area: header;
   background-color: #000;
   color: #fff;
-  height: 72px;
   position: sticky;
   top: 0;
   z-index: $zindex-header;
-  .container {
-    @extend .container-horizontal;
-    height: 100%;
-  }
-  h1 {
-    @extend .h5;
-    margin: 0;
+  .container-horizontal {
+    h1 {
+      @extend .h5;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
   }
 }
