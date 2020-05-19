@@ -10,7 +10,7 @@
   }
 }
 
-.label {
+.badge {
   @extend .small;
   display: inline-block;
   padding: $base-value-quarter $base-value;
@@ -43,7 +43,7 @@
   }
 }
 
-.label-stats-horizontal {
+.badge-stats-horizontal {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -51,7 +51,7 @@
   align-items: stretch;
   border-top: 1px solid $label-color-border;
   background: $label-color-background;
-  .label {
+  .badge {
     text-align: center;
     font-size: 0.6rem;
     flex: 1;
