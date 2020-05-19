@@ -2,7 +2,6 @@
   @if $textColor == false {
     $textColor: choose-contrast-color($faceColor);
   }
-
   background: $faceColor;
   color: $textColor;
   i[class^='fa'] {
@@ -40,6 +39,22 @@
         color: map-get($statusTextColor, $status);
       }
     }
+  }
+}
+
+.badge-lockup {
+  display: inline-block;
+  position: relative;
+  .element {
+    display: inline-block;
+    position: relative;
+  }
+  .badge {
+    @extend .shadow-xs;
+    position: relative;
+    z-index: 1;
+    top: -$base-value-half;
+    left: -$base-value-half;
   }
 }
 
