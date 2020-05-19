@@ -11,17 +11,26 @@
   border-radius: $card-border-radius;
   border: 1px solid transparent;
   margin-bottom: $scale0;
-  background-color: $indigo-shade1;
+  background-color: $neutral-color-dark;
   color: #fff;
 
-  .content {
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  .icon {
+    i[class^='fa'] {
+      font-size: 2rem;
+    }
+  }
+
+  .icon {
+    color: $neutral-color-light;
   }
 
   @each $status, $color in $statusColor {
     &.#{$status} {
       background-color: $color;
       color: map-get($statusTextColor, $status);
+      .icon {
+        color: map-get($statusColorPale, $status);
+      }
     }
   }
 }

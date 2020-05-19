@@ -55,6 +55,13 @@
           content: '\\';
         }
       }
+      .badge {
+        @extend .shadow-xs;
+        position: relative;
+        z-index: 1;
+        top: -$base-value-half;
+        left: -($base-value * 2);
+      }
     }
   }
 }

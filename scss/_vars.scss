@@ -120,6 +120,26 @@ $statusColor: (
   'danger': $red-shade1,
 );
 
+$statusColorPale: (
+  'primary': $primary-color-light,
+  'secondary': $secondary-color-light,
+  'white': $neutral-color-light,
+  'info': $blue-tint3,
+  'success': $green-tint3,
+  'warning': $yelloworange-tint2,
+  'danger': $red-tint3,
+);
+
+$statusColorBlack: (
+  'primary': $primary-color-dark,
+  'secondary': $secondary-color-dark,
+  'white': $neutral-color-dark,
+  'info': $blue-shade3,
+  'success': $green-shade3,
+  'warning': $orange-shade3,
+  'danger': $red-shade3,
+);
+
 // Font colors on top of status
 $statusTextColor: (
   'primary': #fff,
